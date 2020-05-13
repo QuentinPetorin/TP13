@@ -4,42 +4,48 @@ import Node
 class BinaryTree(Node) :
 
 
+
+
+
     def __init__(self,root):
         self.__root = root
-
 
     def getRoot(self):
         return self.__root
 
-
     def createTree(self):
-        Node(self.__root,)
+        Node(self.__root)
 
     def isRoot(self,Node):
         self.__root == Node
 
     def Size(self):
+
         if Node == None :
             return 0
         else :
             return self.Size(Node.getRight()) + self.Size(Node.getLeft()) + 1
 
     def printValues(self, node):
+
         if node is None:
-            return "arbre vide"
+            return "empty_tree"
         else:
             return self.printValues(node.getLeft()) + self.printValues(node.getRight()) + " " + str(node.getVal())
 
     def sumValues(self, Node):
+
         if Node is None:
             return 0
         else:
             return self.sumValues(Node.getLeft()) + Node.getVal() + self.sumValues(Node.getRight())
 
     def numberLeaves(self,Node):
+
         counter = 0
         if self.getRight == None and self.getLeft == None :
             counter += 1
+
             self.numberLeaves(Node.getRight()) + self.numberLeaves(Node.getLeft())
         else :
             self.numberLeaves(Node.getRight()) + self.numberLeaves(Node.getLeft())
@@ -89,35 +95,49 @@ class BinaryTree(Node) :
 
     def descendants(self,Node,val):
         if self.getRight() == None :
+
             A = self.descendants(Node.getLeft())
             return A.getVal()
         elif self.getLeft() == None :
+
             B = self.descendants(Node.getRight())
             return B.getVal()
         elif self.getLeft() == None and self.getRight() == None :
+
             return "Ce noeud n'a pas de descendants"
         else :
+
             C = self.descendants(Node.getRight())
             D = self.descedants(Node.getLeft())
             return C.getVal() and D.getVal()
 
     def prefixe(self, Node):
+
         if Node == None:
             return ""
         else:
             return str(Node.getVal()) + " " + str(self.prefixe(Node.getLeft())) + str(self.prefixe(Node.getRight()))
 
     def infixe(self,Node):
+
         if Node == None:
             return ""
         else:
+
             return str(self.infixe(Node.getLeft())) + str(Node.getVal()) + " " + str(self.infixe(Node.getRight()))
 
     def postfixe(self,Node):
          if Node == None:
+
             return ""
+
          else:
+
             return str(self.postfixe(Node.getLeft())) + str(self.postfixe(Node.getRight())) + str(Node.getVal()) + " "
+
+
+
+
 
 
 
