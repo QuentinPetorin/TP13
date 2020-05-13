@@ -1,6 +1,6 @@
 import Node
 
-#DEFINITION DE LA CLASSE
+
 class BinaryTree(Node) :
 
 
